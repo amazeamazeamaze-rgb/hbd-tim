@@ -347,7 +347,7 @@ $("#m-next").onclick = () => stepRegion(1);
 $("#open-region").onclick = () => go(region + "-trips");
 $("#al-back").onclick = () => go(region + "-trips");
 
-const img = (t, p, cls) => { const i = el("img", cls); i.src = "photos/" + t.id + "/" + p.f; i.width = p.w; i.height = p.h; i.alt = t.title; i.loading = "lazy"; return i; };
+const img = (t, p, cls) => { const i = el("img", cls); i.src = "" + t.id + "/" + p.f; i.width = p.w; i.height = p.h; i.alt = t.title; i.loading = "lazy"; return i; };
 function showPlaces(k) {
   const box = $("#places"); box.textContent = "";
   TRIPS.filter(t => t.region === k).forEach(t => {
@@ -391,7 +391,7 @@ function showAlbum(t) {
 function openShot(i) {
   at = (i + shown.length) % shown.length;
   const x = shown[at], v = $("#viewer-img");
-  v.src = "photos/" + x.t.id + "/" + x.p.f; v.alt = x.t.title;
+  v.src = "" + x.t.id + "/" + x.p.f; v.alt = x.t.title;
   $("#viewer-n").textContent = pad(at + 1) + " / " + pad(shown.length);
   $("#viewer").hidden = false;
 }
